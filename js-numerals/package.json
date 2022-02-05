@@ -1,0 +1,21 @@
+{
+  "name": "numconversion",
+  "version": "1.0.0",
+  "description": "Arabic number conversion tool ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run build && npm run execute",
+    "start:dev": "nodemon src/index.ts",
+    "build": "tsc --build",
+    "execute": "nodemon --legacy-watch ./dist/index.js"
+  },
+  "author": "Grigori Grigoryan",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "devDependencies": {
+    "ts-node": "^10.4.0"
+  }
+}
