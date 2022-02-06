@@ -4,6 +4,7 @@ import one from "./helper/one";
 import hundreds from "./helper/hundreds";
 import thousands from "./helper/thousands";
 import millions from "./helper/millions";
+import billions from "./helper/billions";
 
 const splitInput = (input: number) => {
    const arr = String(input).split('');
@@ -25,15 +26,14 @@ const splitInput = (input: number) => {
 
    if (count <= 9) return millions(input, word, arr);
 
-   if (count < 10) {
-       return; // Billion
-   }
+   if (count <= 12) return billions(input, word, arr);
+
    if (count < 13) {
        return; // Trillion
    }
 }
 
-const num = 30_000_000;
+const num = 10_130_000;
 
 
 console.log(splitInput(num));

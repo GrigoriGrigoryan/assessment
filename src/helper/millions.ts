@@ -6,6 +6,11 @@ import hundreds from "./hundreds";
 
 export default function millions (input: number, word: string, arr: string[]) {
 
+    if( String(Number(`${input}`)).split('').length <= 5) {
+        input = Number(`${input}`);
+        arr = String(input).split('');
+        return   thousands(input, word, arr);
+    }
 
     if ( arr.reduce((a, b) => String(Number(a) + Number(b))) === arr[0] ) {
 
