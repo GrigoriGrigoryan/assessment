@@ -1,6 +1,14 @@
 import cardinals from "../number/numbers";
+import one from "./one";
 
 export default function tens (input: number, word: string, arr: string[]) {
+
+    if( String(Number(`${input}`)).split('').length <= 1) {
+        input = Number(`${input}`);
+        arr = String(input).split('');
+        return   one(input, word, arr);
+    }
+
     if (input <= 19) {
         word  = cardinals.tens[input];
         return word;

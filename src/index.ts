@@ -3,6 +3,7 @@ import tens from "./helper/tens";
 import one from "./helper/one";
 import hundreds from "./helper/hundreds";
 import thousands from "./helper/thousands";
+import millions from "./helper/millions";
 
 const splitInput = (input: number) => {
    const arr = String(input).split('');
@@ -15,18 +16,15 @@ const splitInput = (input: number) => {
 
    if (count <= 3) return hundreds(input, word, arr);
 
-
    if (count <= 6) {
 
        if( input === 1000 ) return cardinals.oneIndex[arr[0]]
 
        if ( input > 1000 ) return thousands(input, word, arr);
+   }
 
-       return; // Thousand
-   }
-   if (count < 7) {
-       return; // Million
-   }
+   if (count <= 9) return millions(input, word, arr);
+
    if (count < 10) {
        return; // Billion
    }
@@ -35,7 +33,7 @@ const splitInput = (input: number) => {
    }
 }
 
-const num = 909999;
+const num = 30_000_000;
 
 
 console.log(splitInput(num));

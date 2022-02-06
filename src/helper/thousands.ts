@@ -6,6 +6,12 @@ import hundreds from "./hundreds";
 export default function thousands (input: number, word: string, arr: string[]) {
         const count = arr.length
 
+        if( String(Number(`${input}`)).split('').length <= 3) {
+            input = Number(`${input}`);
+            arr = String(input).split('');
+          return   hundreds(input, word, arr);
+        }
+
         if ( arr.reduce((a, b) => String(Number(a) + Number(b))) === arr[0] ) {
 
                 let firstPart = cardinals.one[arr[0]];
@@ -58,7 +64,7 @@ export default function thousands (input: number, word: string, arr: string[]) {
                 return firstPart + ' ' + cardinals.oneIndex[1] + ' and ' + `${tens(+arr.slice(4, 6).join(''), word, arr.slice(4, 6))}`
             }
 
-            word =  firstPart + ' ' + cardinals.oneIndex[1] + ' ' + `${hundreds(+arr.slice(3, 6).join(''), word, arr.slice(3, 6))}` //+ `${lastPart}`;
+            word =  firstPart + ' ' + cardinals.oneIndex[1] + ' ' + `${hundreds(+arr.slice(3, 6).join(''), word, arr.slice(3, 6))}`
 
         }
 
