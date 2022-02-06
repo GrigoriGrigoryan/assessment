@@ -10,7 +10,7 @@ export default function tens (input: number, word: string, arr: string[]) {
         return word;
     }
     if (input <= 99) {
-        word  = cardinals.twd[arr[0]] + ' ' + cardinals.one[arr[1]];
+        word  = cardinals.twd[arr[0]] + '-' + cardinals.one[arr[1]];
         return word;
     }
     return word;

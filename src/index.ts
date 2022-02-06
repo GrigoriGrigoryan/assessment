@@ -2,6 +2,7 @@ import cardinals from "./number/numbers";
 import tens from "./helper/tens";
 import one from "./helper/one";
 import hundreds from "./helper/hundreds";
+import thousands from "./helper/thousands";
 
 const splitInput = (input: number) => {
    const arr = String(input).split('');
@@ -15,11 +16,11 @@ const splitInput = (input: number) => {
    if (count <= 3) return hundreds(input, word, arr);
 
 
-   if (count <= 4) {
+   if (count <= 6) {
 
        if( input === 1000 ) return cardinals.oneIndex[arr[0]]
 
-       if ( input > 1000 )
+       if ( input > 1000 ) return thousands(input, word, arr);
 
        return; // Thousand
    }
@@ -34,7 +35,7 @@ const splitInput = (input: number) => {
    }
 }
 
-const num = 90;
+const num = 909999;
 
 
 console.log(splitInput(num));
