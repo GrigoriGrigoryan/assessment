@@ -1,16 +1,19 @@
 import cardinals from "./number/numbers";
-import tens from "./helper/tens";
 import one from "./helper/one";
+import tens from "./helper/tens";
 import hundreds from "./helper/hundreds";
+import beCounting from "./utils/ukcounting";
 import thousands from "./helper/thousands";
 import millions from "./helper/millions";
 import billions from "./helper/billions";
 import trillions from "./helper/trillions";
 
-const splitInput = (input: number) => {
+export const splitInput = (input: number) => {
    const arr = String(input).split('');
    const count = arr.length;
    let word =  "";
+
+   if ( input > 1000 && input < 2000) return beCounting(input);
 
    if (count <= 1) return one(input, word, arr);
 
@@ -32,18 +35,7 @@ const splitInput = (input: number) => {
    if (count <= 15) return trillions(input, word, arr);
 }
 
-const num = 1_000_000_000_001;
+const num = 1100;
 
 
 console.log(splitInput(num));
-
-function numConversion (num: number) {
-    const arr = String(num).split('');
-
-    if ( num > 100 && num < 1000) {
-        console.log(`hundred ic heto ` +  `and`);
-    }
-    if ( num > 1000 ) {
-        console.log(`hundred ic heto ` +  `and`);
-    }
-}
