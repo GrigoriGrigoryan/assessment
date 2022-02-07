@@ -6,9 +6,6 @@ import millions from "./millions";
 
 export default function billions (input: number, word: string, arr: string[]) {
 
-    console.log(`------`);
-    console.log(arr)
-
     if( String(Number(`${input}`)).split('').length <= 5) {
         input = Number(`${input}`);
         arr = String(input).split('');
@@ -30,16 +27,16 @@ export default function billions (input: number, word: string, arr: string[]) {
 
     if ( arr.length === 10 ) {
 
-        return cardinals.one[arr[0]] + ' ' + cardinals.oneIndex[3] + ' and ' + `${millions(+arr.slice(2, 10).join(''), word, arr.slice(2, 10))}`;
+        return cardinals.one[arr[0]] + ' ' + cardinals.oneIndex[3] + ' and ' + `${millions(+arr.slice(1, 10).join(''), word, arr.slice(1, 10))}`;
     }
 
     if ( arr. length === 11) {
 
-        return `${tens(+arr.slice(0, 2).join(''), word, arr.slice(0, 2))}` + ' ' + cardinals.oneIndex[3] + ' and ' + millions(+arr.slice(3, 11).join(''), word, arr.slice(3, 11));
+        return `${tens(+arr.slice(0, 2).join(''), word, arr.slice(0, 2))}` + ' ' + cardinals.oneIndex[3] + ' ' + millions(+arr.slice(2, 11).join(''), word, arr.slice(2, 11));
     }
 
     if ( arr.length === 12) {
 
-        return `${hundreds(+arr.slice(0, 3).join(''), word, arr.slice(0, 3))}` + ' ' + cardinals.oneIndex[3] + ' and ' + millions(+arr.slice(4, 12).join(''), word, arr.slice(4, 12));
+        return `${hundreds(+arr.slice(0, 3).join(''), word, arr.slice(0, 3))}` + ' ' + cardinals.oneIndex[3] + ' ' + millions(+arr.slice(3, 12).join(''), word, arr.slice(3, 12));
     }
 }

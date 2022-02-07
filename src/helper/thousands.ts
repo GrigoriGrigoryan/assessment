@@ -39,6 +39,9 @@ export default function thousands (input: number, word: string, arr: string[]) {
 
             if ( +arr[2] === 0 && +arr[3] === 0 ) {
 
+                if ( +arr.slice(4, 5).join('') === 0) {
+                    return  firstPart + ' ' + cardinals.oneIndex[1]
+                }
                 return  firstPart + ' ' + cardinals.oneIndex[1] + ' and ' + `${one(+arr.slice(4, 5).join(''), word, arr.slice(4, 5))}`;
             }
             if ( +arr[2] === 0 ) {

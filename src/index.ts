@@ -13,13 +13,15 @@ export const splitInput = (input: number) => {
    const count = arr.length;
    let word =  "";
 
-   if ( input > 1000 && input < 2000) return beCounting(input);
+   if ( input === 0) return cardinals.one[0]
 
    if (count <= 1) return one(input, word, arr);
 
    if (count <= 2) return tens(input, word, arr);
 
    if (count <= 3) return hundreds(input, word, arr);
+
+   if ( input > 1000 && input < 2000) return beCounting(input);
 
    if (count <= 6) {
 
@@ -35,7 +37,6 @@ export const splitInput = (input: number) => {
    if (count <= 15) return trillions(input, word, arr);
 }
 
-const num = 1100;
-
+const num = 999_999_999_999_999;
 
 console.log(splitInput(num));
