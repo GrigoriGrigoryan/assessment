@@ -12,7 +12,9 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-
+  <a href="https://github.com/othneildrew/Best-README-Template">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a>
   <h3 align="center">Arabic number conversion tool</h3>
 
   <p align="center">
@@ -62,8 +64,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]]()
-
+It as a web-based solution that converts numeric input into the English phrase of that number.
 
 Here's why:
 * Your time should be focused on creating something amazing. A project that solves a problem and helps others
