@@ -36,7 +36,3 @@ export const splitInput = (input: number) => {
 
    if (count <= 15) return trillions(input, word, arr);
 }
-
-const num = 999_999_999_999_999;
-
-console.log(splitInput(num));

@@ -1,4 +1,4 @@
-import {splitInput} from "../../src";
+import {splitInput} from "../../src/func";
 
 describe(' Checking conversion British English', () => {
     test('testing number words', () => {

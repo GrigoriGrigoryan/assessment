@@ -1,4 +1,4 @@
-import {splitInput} from "../../src";
+import {splitInput} from "../../src/func";
 
 describe('Checking number conversion to word (words)', () => {
     test('Under 100', () => {
@@ -70,23 +70,23 @@ describe('Checking number conversion to word (words)', () => {
         expect(splitInput(1_000_000_001)).toBe("one billion and one")
         expect(splitInput(2_000_000_021)).toBe("two billion and twenty-one")
         expect(splitInput(8_030_106_678)).toBe("eight billion and thirty million one hundred and six thousand six hundred and seventy-eight")
-        expect(splitInput(11_000_000_000)).toBe("eleven billion and one million")
-        expect(splitInput(25_234_567_809)).toBe("twenty-five billiontwo hundred and thirty-four million five hundred and sixty-seven thousand eight hundred and nine")
-        expect(splitInput(78_090_707_000)).toBe("seventy-eight billionninety million seven hundred and seven thousand")
+        expect(splitInput(11_000_000_000)).toBe("eleven billion ")
+        expect(splitInput(25_234_567_809)).toBe("twenty-five billion two hundred and thirty-four million five hundred and sixty-seven thousand eight hundred and nine")
+        expect(splitInput(78_090_707_000)).toBe("seventy-eight billion ninety million seven hundred and seven thousand")
         expect(splitInput(101_000_000_001)).toBe("one hundred and one billion one")
-        expect(splitInput(444_000_000_000)).toBe("four hundred and forty-four billion")
+        expect(splitInput(444_000_000_000)).toBe("four hundred and forty-four billion ")
         expect(splitInput(707_283_432_341)).toBe("seven hundred and seven billion two hundred and eighty-three million four hundred and thirty-two thousand three hundred and forty-one")
         expect(splitInput(999_999_999_999)).toBe("nine hundred and ninety-nine billion nine hundred and ninety-nine million nine hundred and ninety-nine thousand nine hundred and ninety-nine")
     })
 
     test('Under 1_000_000_000_000_000 - Quadrillion', () => {
         expect(splitInput(1_000_000_000_001)).toBe("one trillion one")
-        expect(splitInput(2_304_040_000_000)).toBe("two trillion three hundred and four billion forty million")
+        expect(splitInput(2_304_040_000_000)).toBe("two trillion three hundred and four billion forty million ")
         expect(splitInput(9_009_000_000_900)).toBe("nine trillion nine billion nine hundred")
         expect(splitInput(20_000_000_002_000)).toBe("twenty trillion two thousand")
         expect(splitInput(44_050_201_758_120)).toBe("forty-four trillion fifty billion two hundred and one million seven hundred and fifty-eight thousand one hundred and twenty")
         expect(splitInput(87_238_000_101_667)).toBe("eighty-seven trillion two hundred and thirty-eight billion  million one hundred and one thousand six hundred and sixty-seven")
-        expect(splitInput(110_000_000_000_000)).toBe("one hundred and ten trillion")
+        expect(splitInput(110_000_000_000_000)).toBe("one hundred and ten trillion ")
         expect(splitInput(707_808_300_764_658)).toBe("seven hundred and seven trillion eight hundred and eight billion three hundred million seven hundred and sixty-four thousand six hundred and fifty-eight")
         expect(splitInput(890_803_040_004_900)).toBe("eight hundred and ninety trillion eight hundred and three billion forty million four thousand nine hundred")
         expect(splitInput(999_999_999_999_999)).toBe("nine hundred and ninety-nine trillion nine hundred and ninety-nine billion nine hundred and ninety-nine million nine hundred and ninety-nine thousand nine hundred and ninety-nine")

@@ -22,8 +22,8 @@ export default function thousands (input: number, word: string, arr: string[]) {
                 if ( count >= 6 ) {
                        firstPart  = hundreds(+arr.slice(0, 3).join(''), word, arr.slice(0, 3));
                 }
-                word = firstPart + ' ' + cardinals.oneIndex[1];
-                return word;
+
+                return firstPart + ' ' + cardinals.oneIndex[1];
         }
 
         if ( count <= 4 ) {
@@ -44,31 +44,20 @@ export default function thousands (input: number, word: string, arr: string[]) {
                 }
                 return  firstPart + ' ' + cardinals.oneIndex[1] + ' and ' + `${one(+arr.slice(4, 5).join(''), word, arr.slice(4, 5))}`;
             }
-            if ( +arr[2] === 0 ) {
-
-                return  firstPart + ' ' + cardinals.oneIndex[1] + ' and ' + `${tens(+arr.slice(3, 5).join(''), word, arr.slice(3, 5))}`;
-            }
+            if ( +arr[2] === 0 ) return  firstPart + ' ' + cardinals.oneIndex[1] + ' and ' + `${tens(+arr.slice(3, 5).join(''), word, arr.slice(3, 5))}`;
 
           return  firstPart + ' ' + cardinals.oneIndex[1] + ' ' + `${lastPart}`;
         }
         if ( count === 6 ) {
             let firstPart = hundreds(+arr.slice(0, 3).join(''), word, arr.slice(0, 3));
 
-            if (+arr[3] === 0 && +arr[4] === 0 && +arr[5] === 0 ) {
+            if (+arr[3] === 0 && +arr[4] === 0 && +arr[5] === 0 ) return   firstPart + ' ' + cardinals.oneIndex[1];
 
-                return   firstPart + ' ' + cardinals.oneIndex[1]
-            }
-            if ( +arr[3] === 0 && +arr[4] === 0) {
+            if ( +arr[3] === 0 && +arr[4] === 0) return firstPart + ' ' + cardinals.oneIndex[1] + ' and ' + `${one(+arr.slice(5, 6).join(''), word, arr.slice(5, 6))}`;
 
-                return firstPart + ' ' + cardinals.oneIndex[1] + ' and ' + `${one(+arr.slice(5, 6).join(''), word, arr.slice(5, 6))}`
-            }
-            if ( +arr[3] === 0 ) {
-
-                return firstPart + ' ' + cardinals.oneIndex[1] + ' and ' + `${tens(+arr.slice(4, 6).join(''), word, arr.slice(4, 6))}`
-            }
+            if ( +arr[3] === 0 ) return firstPart + ' ' + cardinals.oneIndex[1] + ' and ' + `${tens(+arr.slice(4, 6).join(''), word, arr.slice(4, 6))}`;
 
             word =  firstPart + ' ' + cardinals.oneIndex[1] + ' ' + `${hundreds(+arr.slice(3, 6).join(''), word, arr.slice(3, 6))}`
-
         }
 
         return word
